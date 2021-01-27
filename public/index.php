@@ -16,12 +16,8 @@ $router = new Router;
 
 $router->add('/', ['controller' => 'HomeController', 'action' => 'index']);
 $router->add('/posts', ['contorller' => 'PostController', 'action' => 'index']);
-$router->add('/posts/new', ['controller' => 'Posts', 'action' => 'new']);
+$router->add('/Posts/new', ['controller' => 'Posts', 'action' => 'new']);
+$router->add('{controller}/{action}');
+$router->add('api/{action}/{controller}');
 
-$url = $_SERVER['REQUEST_URI'];
-
-if ($router->match($url)) {
-    dd($router->getParams());
-} else {
-    echo "No route found for URL '$url'";
-}
+dd(htmlspecialchars(print_r($router->getRoutes(), true)));

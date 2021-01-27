@@ -13,6 +13,27 @@ Bjornstad is a learning framework, utilising an advanced routing engine that use
 
 ### Routes
 
+The routing engine allows for routes in the following format <code>{controller}/{action}</code>. The routing engine allows for the passing of variables in any order. 
+
+Routes can be sued as such:
+
+<pre>
+    $router->add('/', ['controller' => 'HomeController', 'action' => 'index']);
+    $router->add('/posts', ['contorller' => 'PostController', 'action' => 'index']);
+    $router->add('/Posts/new', ['controller' => 'Posts', 'action' => 'new']);
+    $router->add('{controller}/{action}');
+    $router->add('api/{action}/{controller}');
+</pre>
+
+Variables can be passed in through the URL.
+
+<pre>
+    $router->add('{controller}/{id:\d+}/{action});
+
+    from this URL you can pass in a id:
+            posts/123/edit
+</pre>
+
 ### Helper Functions
 
 #### Dump and Die
