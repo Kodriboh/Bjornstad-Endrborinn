@@ -1,0 +1,24 @@
+{
+    "name": "planetdebug/bjornstad",
+    "description": "A bare-bones MVC convenience framework for PHP.",
+    "type": "framework",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Luke McCann",
+            "email": "developer-lukemccann@outlook.com"
+        }
+    ],
+    "require": {
+        "hassankhan/config": "^2.2",
+        "vlucas/phpdotenv": "^5.3"
+    },
+    "autoload": {
+        "files": ["core/Tools/functions.php"],
+        "classmap": ["core/Utilities", "core/Utilities/Debugger.php"],
+        "psr-4": {    
+            "core\\": "core/",
+            "app\\": "app/"
+        }
+    }
+}
