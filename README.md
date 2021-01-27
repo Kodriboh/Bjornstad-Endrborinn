@@ -106,6 +106,48 @@ We can check the matching by declaring a few routes and echoing out our paramete
 
 Simple string routing is not efficient. Matching a simple string can lead to duplications and a much larger routing table than necessary. Instead, we can use pattern matching, as routes follow a similar pattern. We have our controller, a '/' and our action. If we can get this pattern from the URL then we can pattern-match to determine whether or not the controller and action exists within our routing table. We can do this through the use of Regular Expressions.
 
+In this instance we know every route should consist of a controller and an action:
+
+<pre>
+        controller/action
+</pre>
+
+In the original version of this routing engine a simple string comparison was performed. In the improved version regex is utilised to get the controller and action from the URI:
+
+<pre>
+    if (preg_match($reg_ex, $url))
+</pre>
+
+When starting development of this it is a good diea to ignore the routing table initially. Instead, we just assume all our request URL's have the controller/action format. 
+
+We begin our regex by matching the start of our string using '^'. We then want to match any number of any letters from a-z and hyphens. This will match the controller, we then need to match our separator '/' which we escape, finally we match the action in the same way we did the controller:
+
+<pre>
+        /^[A-Za-z-]+\/[A-Za-z-]+$/
+</pre>
+
+To extract these strings we use preg_match:
+
+<pre>
+        $route = "posts/index";
+
+        preg_match($reg_exp, $route, $matches);
+
+
+        $matches = [
+            0 => "posts", 
+            1 => "index"
+        ];
+</pre>
+
+We improve this further through the use of names capture groups:
+
+<pre>
+        /^(?P<controller>[A-Za-z-]+)\/(?P<action>[A-Za-z-]+)$/
+</pre>
+
+Instead of a numbered array we will now have an assoicative arraay with named items.
+
 <br> 
 
 #### Regex
