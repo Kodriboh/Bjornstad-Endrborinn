@@ -1,9 +1,6 @@
 <?php
 
 use core\Classes\App;
-use core\Classes\Config;
-use core\Services\AliasRegistrationService;
-use core\Utilities\Env;
 
 /** 
  * Bjornstad
