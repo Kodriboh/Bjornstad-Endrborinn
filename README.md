@@ -41,6 +41,16 @@ with a colon + the regular expression.
     $router->add('{controller}/{id: \d+}/{action});
 </pre>
 
+Defining a route with variables will look up the controller and action
+passed into the route dynamically:
+
+<pre>
+    url: http://localhost:8080/posts/create
+
+    $router->add('{controller}/{action}');
+
+    This will call the create method on the posts controller.
+</pre>
 ### Helper Functions
 
 #### Dump and Die

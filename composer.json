@@ -14,7 +14,9 @@
         "vlucas/phpdotenv": "^5.3"
     },
     "autoload": {
-        "files": ["core/Tools/functions.php"],
+        "files": [
+            "core/Tools/functions.php"
+        ],
         "classmap": ["core/Utilities", "core/Utilities/Debugger.php"],
         "psr-4": {    
             "core\\": "core/",

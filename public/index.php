@@ -12,8 +12,6 @@ use core\Routing\Router;
  */
 require_once dirname(__DIR__).'/core/bootstrap.php';
 
-require dirname(__DIR__).'/app/Http/Controllers/Posts.php';
-
 $router = new Router;
 
 $router->add('/', ['controller' => 'Home', 'action' => 'index']);

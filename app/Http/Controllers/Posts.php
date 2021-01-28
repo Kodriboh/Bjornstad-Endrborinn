@@ -1,5 +1,6 @@
 <?php 
 
+namespace app\Http\Controllers;
 /**
  * Bjornstad
  * @Author Luke McCann
@@ -17,7 +18,9 @@ class Posts
      */
     public function index() 
     {
-        dd('Post Index');
+        echo 'Hello from the posts controller';
+        echo '<p>Query string parameters: <pre>' .
+            \htmlspecialchars(print_r($_GET, true)) . '</pre></p>';
     }
 
     /**
