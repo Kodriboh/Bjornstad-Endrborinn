@@ -76,6 +76,8 @@ Controllers are intended to be created in the <code>Http\Controllers</code> dire
 
 You can use the base controller by extending the <code>Controller</code> class. To import the class use the <code>namespace</code>: <code>core\Classes\Controller</code>.
 
+Controllers should be defined in the Http/Controllers directory, however, Bjornstad does allow for the creation of subdirectories as it dynamically calculates namespaces for these controllers. 
+
 #### Action Filters
 
 Bjornstad action filters are functions within a controller.
