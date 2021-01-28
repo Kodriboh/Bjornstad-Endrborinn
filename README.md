@@ -75,6 +75,59 @@ you may still declare dynamic routes whilst passing in your query string values.
 Controllers are intended to be created in the <code>Http\Controllers</code> directory. All controllers should extend tha base controller which contains some basic functionality for storing route parameters. Without the extension of this controller you will be unable to access route parameters wihtin your controller. 
 
 You can use the base controller by extending the <code>Controller</code> class. To import the class use the <code>namespace</code>: <code>core\Classes\Controller</code>.
+
+#### Action Filters
+
+Bjornstad action filters are functions within a controller.
+Action filters allow for method calls before and after ever action
+within a controller. This is done through the use of a common <code>Action</code> suffix in the controllers. Defining any method with an action suffix makes 
+the method into an action. 
+
+This allows you to run code before and after the action using the provided <code>before()</code>
+and <code>after()</code> methods availabled on all Controllers. 
+
+An <code>Action</code> is defined as such:
+
+<pre>
+    public function indexAction() 
+    {
+        echo 'Called: Post Index';
+    }
+</pre>
+
+we can then define a before and after method which will run before and after any actions, this can be useful for tasks such as validating a user is logged in.
+
+<pre>
+    public function before()
+    {
+        echo "(before) ";
+    }
+
+    public function after()
+    {
+        echo " (after)";
+    }
+</pre>
+
+Running the indexAction method in this case would output:
+
+<pre>
+    (before) Called: Post Index (after)
+</pre>
+
+It is important to note that to use actions you need only add the Action 
+suffix, Bjornstad does the heavy lifting dealing with Controller/Route mapping
+to ensure that a route named <code>home/index</code> will match with the correct action even with the suffix.
+
+Returning false within the before() method will prevent the execution of the originally called method.
+
+<pre>
+    public function before()
+    {
+        return false;
+    }
+</pre>
+
 ### Helper Functions
 
 #### Dump and Die

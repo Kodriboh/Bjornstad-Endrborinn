@@ -19,11 +19,9 @@ class Posts extends Controller
      *
      * @return view index
      */
-    public function index() 
+    public function indexAction() 
     {
-        echo 'Hello from the posts controller';
-        echo '<p>Query string parameters: <pre>' .
-            \htmlspecialchars(print_r($_GET, true)) . '</pre></p>';
+        echo 'Called: Post Index';
     }
 
     /**
@@ -31,9 +29,9 @@ class Posts extends Controller
      *
      * @return void
      */
-    public function create()
+    public function createAction()
     {
-        dd('Post Create');
+        echo 'Called: Post Create';
     }
 
     /**
@@ -41,9 +39,28 @@ class Posts extends Controller
      * 
      * @return void
      */
-    public function edit()
+    public function editAction()
     {
-        echo '<p>Route parameters: </p>' . 
-            \htmlspecialchars(print_r($this->route_params, true)) . '</pre></p>';
+        echo 'Called: Post Edit';
+    }
+
+    /**
+     * After filter
+     * 
+     * @return void
+     */
+    protected function after()
+    {
+        echo " (after)";
+    }
+
+    /**
+     * Before filter
+     * 
+     * @return void
+     */
+    public function before() 
+    {
+        echo "(before) ";
     }
 }

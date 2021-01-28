@@ -110,16 +110,16 @@ class Router
                 $action = $this->params['action'];
                 $action = $this->convertToCamelCase($action);
 
-                if (\is_callable([$controller_object, $action])) {
+                if (\preg_match('/action$/i', $action) == 0) {
                     $controller_object->$action();
                 } else {
-                    echo "Method $action (in controller $controller_object) not found";
+                    throw new \Exception("Illegal call to $action in controller $controller - remove the Action suffix");
                 }
             } else {
-                echo "Controller class $controller not found";
+                throw new \Exception("Controller class $controller not found");
             }
         } else {
-            echo 'No route matched.';
+            throw new \Exception('No route matched.', 404);
         }
     }
 
