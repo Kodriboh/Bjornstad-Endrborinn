@@ -102,11 +102,11 @@ class Router
         if ($this->match($url)) {
             $controller = $this->params['controller'];
             $controller = $this->convertToPascalCase($controller);
-            $controller = "app\Http\Controllers\\$controller";
+
+            $controller = $this->getNamespace() . $controller;
 
             if (\class_exists($controller)) {
                 $controller_object = new $controller($this->params);
-
                 $action = $this->params['action'];
                 $action = $this->convertToCamelCase($action);
 
@@ -180,5 +180,22 @@ class Router
             }
         }
         return $url;
+    }
+
+    /**
+     * Get the namespace for the controller class.
+     * The namespace defined in the route parameters is added if present.
+     * 
+     * @return string The request URL
+     */
+    protected function getNamespace()
+    {
+        $namespace = 'app\Http\Controllers\\';
+
+        if (array_key_exists('namespace', $this->params)) {
+            $namespace .= $this->params['namespace'] . '\\';
+        }
+
+        return $namespace;
     }
 }
