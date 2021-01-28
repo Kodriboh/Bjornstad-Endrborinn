@@ -3,6 +3,8 @@
 namespace app\Http\Controllers;
 
 use core\Classes\Controller;
+use core\Classes\View;
+
 /**
  * Bjornstad
  * @Author Luke McCann
@@ -21,6 +23,6 @@ class Home extends Controller
      */
     public function index()
     {
-        dd('Home Index');
+        View::render('Home/welcome.php');
     }
 }
