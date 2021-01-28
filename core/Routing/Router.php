@@ -102,7 +102,6 @@ class Router
         if ($this->match($url)) {
             $controller = $this->params['controller'];
             $controller = $this->convertToPascalCase($controller);
-
             $controller = $this->getNamespace() . $controller;
 
             if (\class_exists($controller)) {
