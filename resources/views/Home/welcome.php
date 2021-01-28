@@ -7,5 +7,12 @@
 </head>
 <body>
     <h1>Welcome To Bjornstad</h1>
+
+    <p><?php echo htmlspecialchars($name); ?></p>
+    <ul>
+        <?php foreach ($colors as $color) :?>
+            <li><?php echo htmlspecialchars($color)?></li>
+        <?php endforeach; ?>
+    </ul>
 </body>
 </html>

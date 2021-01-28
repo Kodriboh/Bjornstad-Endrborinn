@@ -130,6 +130,34 @@ Returning false within the before() method will prevent the execution of the ori
     }
 </pre>
 
+### Views
+
+Views are rendered via the <code>View</code> object. We can render views by calling the <code>Render</code> method of this class, please note that this is a static method. 
+
+<pre>
+    public function index()
+    {
+        View::render('Home/welcome.php');
+    }
+</pre>
+
+Views should be stored in the <code>resources/views</code> directory. Views may also be stored within subdirectories, this must be included in the path provided to the renderer. The renderer looks for views starting in the views folder. 
+
+Variables can be passed into the view through the render method:
+
+<pre>
+    public function index()
+    {
+        View::render('Home/welcome.php', [
+            'name' => 'Luke',
+            'colors' => ['red', 'green', 'blue']
+        ]);
+    }
+</pre>
+
+These can then be accessed in the view by calling the
+variable name e.g. <code>$name</code> or <code> foreach ($colors as $color)</code>.
+
 ### Helper Functions
 
 #### Dump and Die

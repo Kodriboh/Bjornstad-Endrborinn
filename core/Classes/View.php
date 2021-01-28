@@ -20,8 +20,10 @@ class View
      * 
      * @return void
      */
-    public static function render(string $view)
+    public static function render(string $view, array $args = [])
     {
+        \extract($args, \EXTR_SKIP);
+        
         $file = dirname(dirname(__DIR__))."/resources/views/$view";
 
         if (is_readable($file)) {

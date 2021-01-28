@@ -23,6 +23,9 @@ class Home extends Controller
      */
     public function index()
     {
-        View::render('Home/welcome.php');
+        View::render('Home/welcome.php', [
+            'name' => 'Luke',
+            'colors' => ['red', 'green', 'blue']
+        ]);
     }
 }
