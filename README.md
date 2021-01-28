@@ -158,6 +158,54 @@ Variables can be passed into the view through the render method:
 These can then be accessed in the view by calling the
 variable name e.g. <code>$name</code> or <code> foreach ($colors as $color)</code>.
 
+### Templating
+
+Bjornstad uses the [Twig](https://twig.symfony.com/) templating engine.
+
+Echoing Variables:
+
+<pre>
+    {{ var }}
+    {{ var|escape }}
+    {{ var|e }}         {# shortcut to escape a variable #}
+</pre>
+
+Twig allows for shorter syntax using common patterns:
+
+<pre>
+    {% for user in users %}
+        * {{ user.name }}
+    {% else %}
+        No users have been found.
+    {% endfor %}
+</pre>
+
+Blocks and template inheritance:
+
+<pre>
+    {% extends "layout.html" %}
+
+    {% block content %}
+        Content of the page...
+    {% endblock %}
+</pre>
+
+Automatic output escaping:
+
+<pre>
+    {% autoescape "html" %}
+        {{ var }}
+        {{ var|raw }}     {# var won't be escaped #}
+        {{ var|escape }}  {# var won't be doubled-escaped #}
+    {% endautoescape %}
+</pre>
+
+Sandboxing:
+
+<pre>
+    {{ include('page.html', sandboxed = true) }}
+</pre>
+
 ### Helper Functions
 
 #### Dump and Die
