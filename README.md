@@ -51,6 +51,30 @@ passed into the route dynamically:
 
     This will call the create method on the posts controller.
 </pre>
+
+####
+
+You can pass values to the route via query strings as normal:
+
+<pre>
+    http://localhost:8080/posts/index?page=0&items_per_page=10
+
+    Query string parameters:
+    Array
+    (
+        [page] => 0
+        [items_per_page] => 10
+    )
+</pre>
+
+The Bjornstad routing engine separates the query string parameters passed from the route before string matcing, therefore
+you may still declare dynamic routes whilst passing in your query string values. 
+
+### Controllers
+
+Controllers are intended to be created in the <code>Http\Controllers</code> directory. All controllers should extend tha base controller which contains some basic functionality for storing route parameters. Without the extension of this controller you will be unable to access route parameters wihtin your controller. 
+
+You can use the base controller by extending the <code>Controller</code> class. To import the class use the <code>namespace</code>: <code>core\Classes\Controller</code>.
 ### Helper Functions
 
 #### Dump and Die

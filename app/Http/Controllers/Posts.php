@@ -1,6 +1,9 @@
 <?php 
 
 namespace app\Http\Controllers;
+
+use core\Classes\Controller;
+
 /**
  * Bjornstad
  * @Author Luke McCann
@@ -9,7 +12,7 @@ namespace app\Http\Controllers;
  * 
  * PHP Version 8.0
  */
-class Posts
+class Posts extends Controller
 {
     /**
      * Show the index page
@@ -31,5 +34,16 @@ class Posts
     public function create()
     {
         dd('Post Create');
+    }
+
+    /**
+     * Show the udpate page
+     * 
+     * @return void
+     */
+    public function edit()
+    {
+        echo '<p>Route parameters: </p>' . 
+            \htmlspecialchars(print_r($this->route_params, true)) . '</pre></p>';
     }
 }

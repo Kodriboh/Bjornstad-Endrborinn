@@ -2,7 +2,7 @@
 
 namespace app\Http\Controllers;
 
-
+use core\Classes\Controller;
 /**
  * Bjornstad
  * @Author Luke McCann
@@ -11,7 +11,7 @@ namespace app\Http\Controllers;
  * 
  * PHP Version 8.0
  */
-class Home 
+class Home extends Controller
 {
 
     /**
