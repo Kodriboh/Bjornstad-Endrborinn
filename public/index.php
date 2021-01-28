@@ -12,12 +12,12 @@ use core\Routing\Router;
  */
 require_once dirname(__DIR__).'/core/bootstrap.php';
 
+require dirname(__DIR__).'/app/Http/Controllers/Posts.php';
+
 $router = new Router;
 
-$router->add('/', ['controller' => 'HomeController', 'action' => 'index']);
-$router->add('/posts', ['contorller' => 'PostController', 'action' => 'index']);
-$router->add('/Posts/new', ['controller' => 'Posts', 'action' => 'new']);
+$router->add('/', ['controller' => 'Home', 'action' => 'index']);
 $router->add('{controller}/{action}');
-$router->add('api/{action}/{controller}');
+$router->add('{controller}/{id:\d+}/{action}');
 
-dd(htmlspecialchars(print_r($router->getRoutes(), true)));
+$router->dispatch($_SERVER['REQUEST_URI']);

@@ -34,6 +34,13 @@ Variables can be passed in through the URL.
             posts/123/edit
 </pre>
 
+Furthermore, regular expressions can be passe din variables by following the variable
+with a colon + the regular expression.
+
+<pre>
+    $router->add('{controller}/{id: \d+}/{action});
+</pre>
+
 ### Helper Functions
 
 #### Dump and Die
