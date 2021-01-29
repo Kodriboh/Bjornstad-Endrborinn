@@ -187,7 +187,7 @@ Bjornstad uses the [Twig](https://twig.symfony.com/) templating engine. Twig is 
 </pre>
 
 Please note that Bjornstad begins its search for templates in the <code>resources/templates</code>
-directory, subdirectories may be used. This separates templates and views into distinct locations.
+directory, subdirectories may be used. This separates templates and views into distinct locations. It is recommended to name your template files with the extension <code>.php.twig</code> for PHP files or <code>.html.twig</code> for HTML files.
 
 #### Twig
 

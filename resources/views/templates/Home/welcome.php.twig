@@ -1,18 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome</title>
-</head>
-<body>
-    <h1>Welcome To Bjornstad</h1>
+{% extends "base.php.twig" %}
 
-    <p>{{ name }}</p>
-    <ul>
-        {% for color in colors %}
-            <li>{{ color }}</li>
-        {% endfor %}
-    </ul>
-</body>
-</html>
+{% block title %}Welcome{% endblock %}
+
+{% block header %}
+    <header>
+        <h1>Welcome To Bjornstad</h1>
+        <p>Endrborinn Edition</p>
+        <p>Version: 2.1</p>
+        <p>PHP Version: 8.2</p>
+    </header>
+{% endblock %}
