@@ -1,10 +1,18 @@
-# Bjornstad
+# Bjornstad Endrborinn
 
 Derived from the norse word for 'son of', and spawned from my previous framework 'Hoegr' (taken from the norse word for 'conenient'), Bjornstad is a simplistic MVC framework built into it's own dockerized project container for ease-of-use. 
 
 Bjornstad is a learning framework, utilising an advanced routing engine that uses regex to route requests between controllers. Bjornstad is intended to be used to teach the concepts of MVC by providing a bare-bones example on how modern frameworks are constructed.
 
 Play around with the framework, build some small projects, customise and make it your own. It is not recommended to use any version of Bjornstad in a production environment, it is not a battle-tested framework and is likely insecure and unreliable for the needs of enterprise level applications. 
+
+Please note, your project must contain a .env file, to create a valid .env file copy the .env.example, adding in your own configuration values.
+
+## Endrborinn Edition
+
+As a small framework project, Bjornstad has developed into a few iterations, from the incredibly basic and buggy Hoegr, to the slightly more mature Bjornstad2. Bjordnstad Endrborinn rebuilds Bjornstad from the ground up, adding more quality of life features, a more familiar file structure and a greater emphasis on object oriented PHP. 
+
+The term Endrborinn comes form the Norse belief in reincarnation. Bjornstad Endrborinn is born anew, still Bjornstad, but from the ashes of the old framework it has risen again to become anew. 
 
 ## Dependencies
 
