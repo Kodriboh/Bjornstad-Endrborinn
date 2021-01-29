@@ -10,7 +10,7 @@ Please note, your project must contain a .env file, to create a valid .env file 
 
 ## Endrborinn Edition
 
-As a small framework project, Bjornstad has developed into a few iterations, from the incredibly basic and buggy Hoegr, to the slightly more mature Bjornstad2. Bjordnstad Endrborinn rebuilds Bjornstad from the ground up, adding more quality of life features, a more familiar file structure and a greater emphasis on object oriented PHP. 
+As a small framework project, Bjornstad has developed into a few iterations, from the incredibly basic and buggy Hoegr, to the slightly more mature Bjornstad2. Bjornstad Endrborinn rebuilds Bjornstad from the ground up, adding more quality of life features, a more familiar file structure and a greater emphasis on object oriented PHP. 
 
 The term Endrborinn comes form the Norse belief in reincarnation. Bjornstad Endrborinn is born anew, still Bjornstad, but from the ashes of the old framework it has risen again to become anew. 
 
