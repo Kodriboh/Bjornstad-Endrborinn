@@ -2,6 +2,7 @@
 
 namespace app\Http\Models;
 
+use core\Classes\Model;
 use PDO;
 use PDOException;
 
@@ -13,7 +14,7 @@ use PDOException;
  * 
  * PHP Version 8.0
  */
-class Post 
+class Post extends Model
 {
 
     /**
@@ -23,14 +24,11 @@ class Post
      */
     public static function getAll()
     {
-        $host = 'mysql';
-        $dbname = 'Bjornstad';
-        $username = 'root';
-        $password = 'root';
+
 
         try {
-            $db = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $username, $password);
-
+            $db = static::getConnection();
+            
             $stmt = $db->query('SELECT id, title, content FROM posts ORDER BY created_at');
 
             $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
