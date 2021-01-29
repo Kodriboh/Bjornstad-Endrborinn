@@ -17,7 +17,9 @@
         "files": [
             "core/Tools/functions.php"
         ],
-        "classmap": ["core/Utilities", "core/Utilities/Debugger.php"],
+        "classmap": [
+            "core/Utilities"
+        ],
         "psr-4": {    
             "core\\": "core/",
             "app\\": "app/"
