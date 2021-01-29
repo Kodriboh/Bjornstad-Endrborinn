@@ -36,7 +36,7 @@ class App
      */
     private function init() 
     {
-        $this->registerAutoloader();
+        // $this->registerAutoloader();
         $this->loadConfig();
         $this->setRoot($this->app_config['app_root']);
         $this->registerAliases($this->app_config['aliases']);
@@ -103,6 +103,13 @@ class App
 
     /**
      * Register the autoloader
+     * 
+     * This has been deprecated with the addition of the composer
+     * autolaoder, you should avoid using this method, however it has been left
+     * in to allow backwards compatibiltiy. 
+     * 
+     * If you have any issues with your current autoloader, uncomment this in
+     * the init method.
      *
      * @return void
      */
