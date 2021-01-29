@@ -4,6 +4,9 @@ namespace app\Http\Controllers;
 
 use core\Classes\Controller;
 
+use app\Http\Models\Post;
+use core\Classes\View;
+
 /**
  * Bjornstad
  * @Author Luke McCann
@@ -21,7 +24,11 @@ class Posts extends Controller
      */
     public function indexAction() 
     {
-        echo 'Called: Post Index';
+        $posts = Post::getAll();
+
+        View::renderTemplate('Post/index.php.twig', [
+            'posts' => $posts
+        ]);
     }
 
     /**
