@@ -23,7 +23,7 @@ class Home extends Controller
      */
     public function index()
     {
-        View::render('Home/welcome.php', [
+        View::renderTemplate('Home/welcome.php.twig', [
             'name' => 'Luke',
             'colors' => ['red', 'green', 'blue']
         ]);

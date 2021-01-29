@@ -36,6 +36,7 @@ class App
      */
     private function init() 
     {
+        $this->registerAutoloader();
         $this->loadConfig();
         $this->setRoot($this->app_config['app_root']);
         $this->registerAliases($this->app_config['aliases']);
@@ -98,5 +99,21 @@ class App
         }
 
         return self::$instance;
+    }
+
+    /**
+     * Register the autoloader
+     *
+     * @return void
+     */
+    private static function registerAutoloader()
+    {
+        spl_autoload_register(function ($class) {
+            $root = dirname(__DIR__);   
+            $file = $root . '/' . str_replace('\\', '/', $class) . '.php';
+            if (is_readable($file)) {
+                require $root . '/' . str_replace('\\', '/', $class) . '.php';
+            }
+        });
     }
 }

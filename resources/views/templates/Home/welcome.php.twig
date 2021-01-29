@@ -8,11 +8,11 @@
 <body>
     <h1>Welcome To Bjornstad</h1>
 
-    <p><?php echo htmlspecialchars($name); ?></p>
+    <p>{{ name }}</p>
     <ul>
-        <?php foreach ($colors as $color) :?>
-            <li><?php echo htmlspecialchars($color)?></li>
-        <?php endforeach; ?>
+        {% for color in colors %}
+            <li>{{ color }}</li>
+        {% endfor %}
     </ul>
 </body>
 </html>

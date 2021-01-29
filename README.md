@@ -166,7 +166,22 @@ variable name e.g. <code>$name</code> or <code> foreach ($colors as $color)</cod
 
 ### Templating
 
-Bjornstad uses the [Twig](https://twig.symfony.com/) templating engine.
+Bjornstad uses the [Twig](https://twig.symfony.com/) templating engine. Twig is utilised through the core <code>View<code> class. Much like rendering a view, you can render a twig template using the <code>renderTemplate()</code> static function.
+
+<pre>
+    public function index()
+    {
+        View::renderTemplate('Home/welcome.php.twig', [
+            'name' => 'Luke',
+            'colors' => ['red', 'green', 'blue']
+        ]);
+    }
+</pre>
+
+Please note that Bjornstad begins its search for templates in the <code>resources/templates</code>
+directory, subdirectories may be used. This separates templates and views into distinct locations.
+
+#### Twig
 
 Echoing Variables:
 
