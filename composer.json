@@ -10,8 +10,8 @@
         }
     ],
     "require": {
-        "hassankhan/config": "^2.2",
-        "vlucas/phpdotenv": "^5.3"
+        "vlucas/phpdotenv": "^5.3",
+        "twig/twig": "^3.2"
     },
     "autoload": {
         "files": [

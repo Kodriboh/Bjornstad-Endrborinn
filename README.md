@@ -4,10 +4,16 @@ Derived from the norse word for 'son of', and spawned from my previous framework
 
 Bjornstad is a learning framework, utilising an advanced routing engine that uses regex to route requests between controllers. Bjornstad is intended to be used to teach the concepts of MVC by providing a bare-bones example on how modern frameworks are constructed.
 
+Play around with the framework, build some small projects, customise and make it your own. It is not recommended to use any version of Bjornstad in a production environment, it is not a battle-tested framework and is likely insecure and unreliable for the needs of enterprise level applications. 
+
 ## Dependencies
 
-- Docker 
-- vlucas/Dotenv
+- [Docker](https://www.docker.com/products/docker-desktop)
+- [Composer](https://getcomposer.org/download/)
+
+### Composer Dependencies
+- [vlucas/Dotenv](https://github.com/vlucas/phpdotenv)
+- [twig/twig](https://twig.symfony.com/)
 
 ## Framework Documentation
 
