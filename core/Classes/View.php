@@ -52,7 +52,7 @@ class View
             $twig = new \Twig\Environment($loader, [
                 'debug' => true,
                 'charset' => 'utf-8',
-                'cache' => '../App/cache',
+                'cache' => \dirname(dirname(__DIR__)).'/storage/cache/twig',
                 'optimizations' => 1,
             ]); 
 
